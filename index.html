@@ -1,5 +1,24 @@
 <html>
 <head>
+    <style>
+div.scrollmenu {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+    background-color: #777;
+}
+</style>
 <script type="text/javascript">
 $(document).ready(function(){
     $('[data-toggle="popover1"]').popover({placement: "auto"});
@@ -24,7 +43,13 @@ $(document).ready(function(){
   </style>
 </head>
 <body>
-
+<div class="scrollmenu">
+  <a href="#Main">Main</a>
+  <a href="#Project">Project</a>
+  <a href="#Results">Results</a>
+  <a href="#Log">Log book</a>
+  <a href="#Team">Team and Sponsors</a>
+</div>
 <div class="container-fluid navbarFluid content-main">
 <div class="row">
 <nav class="col-md-3 bs-docs-sidebar navFont">
