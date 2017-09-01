@@ -25,70 +25,36 @@ $(document).ready(function(){
 </head>
 <body>
 
-<div id="banner" style="background-image: url(http://2016.igem.org/wiki/images/thumb/5/50/T--Oxford--parts.png/800px-T--Oxford--parts.png);"></div>
-
 <div class="container-fluid navbarFluid content-main">
 <div class="row">
 <nav class="col-md-3 bs-docs-sidebar navFont">
         <ul id="sidebar" class="nav nav-stacked" data-spy="affix" data-offset-top="330">
             <li>
-                <a href="#Parts">Parts</a>
-            </li>
-             <li>
-                <a href="#chelators">Copper Chelators</a>
-                <ul class="nav nav-stacked">
-                    <li><a href="#Csp1H">Csp1</a>
-                      <ul class="nav nav-stacked">
-                         <li><a href="#Csp1">Csp1</a></li>
-                         <li><a href="#Csp1sfGFP">Csp1sfGFP</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#MymTH">MymT</a>
-                      <ul class="nav nav-stacked">
-                         <li><a href="#MymT">MymT</a></li>
-                         <li><a href="#MymTsfGFP">MymTsfGFP</a></li>
-                      </ul>
-                    </li>
-                </ul>
-           </li>
-           <li>
-                <a href="#Promoters">Copper Promoters</a>
-                <ul class="nav nav-stacked">
-                    <li><a href="#CueR">CueR-linked systems</a>
-                     <ul class="nav nav-stacked">
-                           <li><a href="#pcg">pCopA GFP</a></li>
-                           <li><a href="#pg">pCopA GFP- divergent. CueR</a></li>
-                           <li><a href="#p">pCopA - divergent. CueR</a></li>
-                           <li><a href="#fcg">pCopA CueR GFP</a></li>
+                <a href="#Background">Background</a>
+                   <ul class="nav nav-stacked">
+                       <li><a href="#Gene">Gene expression</a></li>
+                       <li><a href="#Riboswitches">Riboswitches</a></li>
+                       <li><a href="#Molecular">Molecular Beacons</a></li>
                     </ul>
-                    </li>
-                     <li><a href="#CusS-CusR">CusS/CusR systems</a>
-                     <ul class="nav nav-stacked">
-                           <li><a href="#pCusC">pCusC RFP</a></li>
-                           <li><a href="#fck">pCusC CusR RFP</a></li>
-                   </ul>
-                   </li>
-                 </ul>
-              </li>
-              <li>
-                <a href="#Comps">Composite Parts</a>
-                  <ul class="nav nav-stacked">
-                           <li><a href="#pm">pCopA MymT- divergent CueR</a></li>
-                           <li><a href="#pmg">pCopA MymTGFP- divergent CueR</a></li>
-                           <li><a href="#ptcg">pCopA Csp1GFP- divergent CueR</a></li>
-           </ul></li>
-
-<li>
-<a href="#references">References</a>
-</li>
+            </li>
+             <li><a href="#Problem">Problem</a></li>
+             <li><a href="#Solution">Solution</a></li>
+             <li><a href="#Goals">Goals</a>
+                   <ul class="nav nav-stacked">
+                       <li><a href="#Core">Core</a></li>
+                       <li><a href="#Stretch">Stretch</a></li>
+                    </ul>
+             </li>
+             <li><a href="#Future">Future</a></li>
+             <li><a href="#references">References</a></li>
         </ul>
     </nav>
 
 
     <div class="col-md-9 content-right" style="background-color: #fff;">
 
-<h1> Background (relevance) </h1>
-<h3> Regulated gene expression</h3>
+<h1 id="Background"> Background (relevance) </h1>
+<h3 id="Gene"> Regulated gene expression</h3>
 <p>Bioscience industry such as genetic modified organisms and gene therapy are enhanced by the control of gene expression. Control over the expression of the protein-hormone insulin in response to glucose-concentration could, for instance, allow a cell-based treatment for diabetes and selective expression of a toxin only in tumour cells could act as a gene therapy treatment for cancer.</p> 
 <p>Previous control of gene expression has largely been achieved through synthetic biology by repurposing natural mechanisms that regulate transcription, such as promoter sequences and protein transcription factors. </p> 
 <p>The expression of a gene under the lac prom
@@ -99,7 +65,7 @@ Diagram/ pmol gif of lacI
 <p>Other promoters can couple gene expression to the growth conditions of the cell, its position in the cell cycle or to chemical modifications of DNA-packaging proteins. Through oligomeric proteins and multiple copies of the DNA binding site, often in inverted repeats, protein-protein interactions display cooperative behavior. </p>
 
 <p>Protein-transcription factor systems are not trivial to design as the number of regulated promoter sequences is limited and problems with the dynamic range, size and cell biochemistry requirements limit their use to different species. Building a pathway of many independently regulated genes would prove challenging as they cannot be retargeted to arbitrary DNA sequences.</p> 
-<h3>Riboswitches</h3>
+<h3 id="Riboswitches">Riboswitches</h3>
 <p>Unlike protein-based transcriptional regulation, which is dependent on the complicated tertiary and quaternary folding of the amino acids of a protein sequence and the interaction of the protein with DNA, control of the level of mRNA structure can be predicted and designed through simpler nucleotide interactions. </p>
 <p>In general stable mRNA structures, such as RNA hairpins, that obstruct the binding of the ribosome to the ribosome-binding site (rbs) lower the rate of translation of the mRNA producing less of the protein product. (Salis et al. 1) </p>
 <p>Riboswitches (RNA switches) have great potential for the design of synthetic genetic circuits. Riboswitches are sequences of RNA that binds small molecules (RNA aptamers) that are located within a protein-encoded mRNA sequence. The binding of the small molecule changes the structure of the riboswitch exposing or hiding the ribosome binding site and thereby controlling gene expression. Other riboswitches operate through RNA self-cleavage (e.g. GlmS ribozyme) or by attenuation of transcription.</p>
@@ -111,7 +77,7 @@ Riboswitch exp. eg. Gif of Gly ribsowitch
 </p>Using RNA aptamers generated by <i>in vitro</i> evolution/SELEX(popover) synthetic riboswitches have been produced that respond to a variety of chemicals. (2-Salis diverse chemical riboswitches).</p>
 <p>Yin et al.(3) have made riboswitches at the 5’ end of mRNA that are responsive to the presence of a Trigger strand of RNA that anneals to a single strand region to open a hairpin (Toehold mechanism). Opening this hairpin reveals an rbs located in the hairpin loop. By investigating different sequences they managed to achieve ON/OFF ratios greater than 600. As the sequence of the trigger was not greatly restricted multiple versions can be created and they demonstrated independent regulation of four different fluorescent protein reporters. </p> 
 <p>The AUG start codon in these Toehold switches is located in the stem of the hairpin necessitating a translated linker before the protein of interest.</p>
-<h3> Molecular Beacons</h3>
+<h3 id="Molecular"> Molecular Beacons</h3>
 <p>Molecular beacons are DNA or RNA molecules that form hairpin structures typically with the ends labeled with fluorophore-quencher pairs. The binding of a complementary sequence to the loop region is able to unwind the hairpin to separate the fluorophore-quencher pair leading to a detectable fluorescence output. Molecular beacons can be used for detecting specific DNA or RNA sequences in a sample for instance the detection of viral RNA. </p>
 <p>Plaxco et al.(4) created molecular beacons that had the property of cooperativity with respect to their trigger i.e. instead of a broad dose-response relationship there was switch-like behaviour. </p>
 Diagram of coop. molecular beacon in three states e.g fig3
@@ -123,17 +89,17 @@ Diagram e.g. fig2 of generalizable
 <p>Consistent with this interpretation as the length of the linker increases the more cooperative the receptor becomes.</p>
 <p>Plaxco demonstrated these receptors using split aptamers for mercury, doxorubicin and cocaine. Ricci et al. (6) created a molecular beacon of a similar design. This beacon detected 9bp DNA sequence through two repeats of a clamp-like binding site where one half of the clamp formed Watson-Crick base pairs to the ligand and one half Hoogsteen base pairs to the same ligand. The two half were separated by a similar disordered loop. </p>
 Diagram of their molecular beacon.
-<h1> The Problem (relevance) </h1>
+<h1 id="Problem"> The Problem (relevance) </h1>
 <ul>
 <li> Protein-promoter regulation of gene products is limited by low dynamic range, species specificity and size.</li>
 <li>Protein-promoter interactions cannot easily be redesigned.</li>
 <li>Riboswitches are easier to implement than protein-promoter systems and can be triggers by short pieces of RNA. However riboswitches responsive to oligonucleotide triggers lack the cooperativity of protein-promoter interactions and are often context-dependent and can misfold due to surrounding sequences. </li>
 </ul>
-<h1> Our solution (merit) </h1>
+<h1 id="Solution"> Our solution (merit) </h1>
 <p>We will design a set of riboswitches that can be controlled, in a cooperative fashion, by the concentration by a oligonucleotide Trigger strand through the presence of multiple binging sites.</p>
 
-<h1> Project Goals (Specification and Feasibility)</h1>
-<h3>Core Goals</h3>
+<h1 id="Goals"> Project Goals (Specification and Feasibility)</h1>
+<h3 id="Core">Core Goals</h3>
 <ul>
 <li>Design a two-site activatory riboswitch that, similar to the Plaxco molecular beacons operates through unwinding of an hairpin, is able to respond cooperatively to the concentration of a trigger strand allowing the ribosome to access a previously hidden rbs.</li>
 <ul>
@@ -152,7 +118,7 @@ Diagram of their molecular beacon.
 <li>Cooperativity, as measured by the hill coefficient, should increase as loop length and number of binding sites increases.</li>
 </ul>
 </ul>
-<h3>Stretch goals</h3>
+<h3 id="Stretch">Stretch goals</h3>
 <ul>
 <li>Compare homotropic (same trigger) and heterotropic (two different triggers) cooperativity for both activatory designs. </li>
 <ul>
@@ -162,7 +128,7 @@ Diagram of their molecular beacon.
 <li>Investigate other riboswitch designs including a Triple-trigger design, a homotropic asymmetric design and a cooperative Toehold switch.</li>
 </ul>
 </ul>
-<h1>Future Work</h1>
+<h1 id="Future">Future Work</h1>
 <ul>
 <li>Perfect the switches to increase n. </li>
 <li>Implement attenuator by Folliard et al.(7) to allow the switches to be applied to any protein. Contextual sensitivity of riboswitch</li>
@@ -170,5 +136,5 @@ Diagram of their molecular beacon.
 <li>Incorporate multiple switches into one system to show independent regulation.</li>
 <li>Exchange the Broccoli aptamer sequence tag for another RNA aptamer e.g. an aptamer for the output of the system creating a feedback loop.</li>
 </ul>
-
+<h1 id="Goals"> References</h1>
 </body> </html>
