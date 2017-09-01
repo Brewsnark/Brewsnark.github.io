@@ -1,3 +1,326 @@
 <html>
-<h1>Main page text.</h1>
-</html>
+<head>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('[data-toggle="popover1"]').popover({placement: "auto"});
+});
+</script>
+<style>
+  /* Popover Header */
+  .popover-title {
+      background-color: #B0C4DE;
+      color: #FFFFFF;
+      height: auto;
+      font-size: 28px;
+      text-align: center;
+      padding: 2px;
+  }
+  /* Popover Body */
+  .popover-content {
+      background-color: ;
+      color: #000000;
+      padding: 10px;
+  }
+  </style>
+</head>
+<body>
+
+<div id="banner" style="background-image: url(http://2016.igem.org/wiki/images/thumb/5/50/T--Oxford--parts.png/800px-T--Oxford--parts.png);"></div>
+
+<div class="container-fluid navbarFluid content-main">
+<div class="row">
+<nav class="col-md-3 bs-docs-sidebar navFont">
+        <ul id="sidebar" class="nav nav-stacked" data-spy="affix" data-offset-top="330">
+            <li>
+                <a href="#Parts">Parts</a>
+            </li>
+             <li>
+                <a href="#chelators">Copper Chelators</a>
+                <ul class="nav nav-stacked">
+                    <li><a href="#Csp1H">Csp1</a>
+                      <ul class="nav nav-stacked">
+                         <li><a href="#Csp1">Csp1</a></li>
+                         <li><a href="#Csp1sfGFP">Csp1sfGFP</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#MymTH">MymT</a>
+                      <ul class="nav nav-stacked">
+                         <li><a href="#MymT">MymT</a></li>
+                         <li><a href="#MymTsfGFP">MymTsfGFP</a></li>
+                      </ul>
+                    </li>
+                </ul>
+           </li>
+           <li>
+                <a href="#Promoters">Copper Promoters</a>
+                <ul class="nav nav-stacked">
+                    <li><a href="#CueR">CueR-linked systems</a>
+                     <ul class="nav nav-stacked">
+                           <li><a href="#pcg">pCopA GFP</a></li>
+                           <li><a href="#pg">pCopA GFP- divergent. CueR</a></li>
+                           <li><a href="#p">pCopA - divergent. CueR</a></li>
+                           <li><a href="#fcg">pCopA CueR GFP</a></li>
+                    </ul>
+                    </li>
+                     <li><a href="#CusS-CusR">CusS/CusR systems</a>
+                     <ul class="nav nav-stacked">
+                           <li><a href="#pCusC">pCusC RFP</a></li>
+                           <li><a href="#fck">pCusC CusR RFP</a></li>
+                   </ul>
+                   </li>
+                 </ul>
+              </li>
+              <li>
+                <a href="#Comps">Composite Parts</a>
+                  <ul class="nav nav-stacked">
+                           <li><a href="#pm">pCopA MymT- divergent CueR</a></li>
+                           <li><a href="#pmg">pCopA MymTGFP- divergent CueR</a></li>
+                           <li><a href="#ptcg">pCopA Csp1GFP- divergent CueR</a></li>
+           </ul></li>
+
+<li>
+<a href="#references">References</a>
+</li>
+        </ul>
+    </nav>
+
+
+    <div class="col-md-9 content-right" style="background-color: #fff;">
+
+<div class="pageTitle pageTitleNavy" id="Parts">Parts</div>
+<p>Our project required a system able to detect and then chelate dietary copper. We decided that we should produce parts to test these two functions separately. 
+</p>
+<p>
+Having characterised each we could have a better understanding of a system whereby dietary copper was detected and a <a data-toggle="popover1" data-trigger="hover" placement:"top" title="Chelator" data-content="A molecule, here a protein, able to form multiple bonds to a single metal ion.">chelator</a> produced until the free copper concentration is reduced to a stable level. 
+</p>
+<p>
+Our copper chelators and copper-sensitive <a data-toggle="popover1" data-trigger="hover" placement:"top" title="Promoter" data-content="A region of DNA that is able to initiate transcription of a gene through the binding of protein factors.">promoters</a> belong in our list of <a href="http://2016.igem.org/Team:Oxford/Basic_Part">basic parts</a> whilst our promoter-chelators systems belong in our <a href="http://2016.igem.org/Team:Oxford/Composite_Part">composite parts</a> range. All can be found in our complete <a href="http://2016.igem.org/Team:Oxford/Part_Collection">parts collection</a>.
+</p>
+<section id="chelators">
+<h1 class="pageTitleNavy">Copper Chelators</h1>
+<p> In order to chelate copper we searched for copper binding and storage proteins. 
+We decided that the ideal copper chelator would have these properties:
+</p>
+<ul class="textLiFont">
+<li>Should be able to bind multiple copper ions per peptide to increase the efficient use of cell resources. </li>
+<li>They should be from the prokaryotic domain because eukaryotic proteins can have expression issues in <i>Escherichia coli.</i> </li>
+<li>As <i> E. coli </i>naturally deals with copper toxicity by binding copper in the <a data-toggle="popover1" data-trigger="hover" title="Periplasm" data-content="A space between the outer cell membrane and bacterial cell wall in gram negative bacteria" placement: "top">periplasm</a> then exporting it, periplasmic proteins may reduce toxicity to the host. </li>
+</ul>
+<p>Using these criteria we found two copper chelators that we thought would be useful. We designed gBlocks, codon optimised for <i>E. coli</i>, containing these parts both alone and linked to super-folder <a data-toggle="popover1" data-trigger="hover" title="Green Fluorescent Protein" data-content="A protein that emits green light when illuminated with blue to UV light">GFP</a>. This form of the fluorescent protein was used because the standard GFP doesn’t fold particularly well in the periplasm where one of our chelators is intended to travel to. 
+The proteins, both alone and attached to sfGFP, were ordered with C-terminal <a data-toggle="popover1" data-trigger="hover" placement:"top" title="His Tag" data-content="Six sequential Histidine residues that bind to NTA columns"> hexa-histidine tag</a> so we could purify them. A concern was raised that the His tag would also weakly bind copper potentially affecting the results. However we decided that increasing the copper-binding would only improve the proteins' intended function.  
+</p>
+</section>
+<h2 id="Csp1H">Copper Storage Protein 1</h2>
+<p>
+Copper storage protein 1 is a protein discovered in a methane-oxidizing alphaproteobacterium called<i> Methylosinus trichosporium OB3b. </i> (OB3b here stands for “oddball” strain 3b). This bacterium has a high demand for copper for use in its particular <a data-toggle="popover1" data-trigger="hover" title="Methane Monoxygenase" data-content="An enzyme that oxides methane">methane monoxygenase</a> enzyme. Vita <i>et al.</i><sup>(1)</sup> discovered Csp1 in 2015, characterised the protein’s copper affinity and obtained crystal structures with and without copper.
+</p>
+
+<h3 id="Csp1">TAT Csp1</h3>
+<p>
+Csp1 is a tetramer of four-helix bundle subunits. Each monomer can bind up to 13 Cu(I) ions meaning that the tetramer binds a maximum of 52 copper ions. Vita <i>et al.</i> crystallised Csp1 with and without copper bound. The copper is bound inside the pre-folded helical bundles by Cys residues in contrast to metallothioneins, which are unstructured until they fold around metal ion clusters. Vita <i>et al.</i><sup>(1)</sup> found an average copper affinity of approximately 1x10<sup>17</sup>M<sup>-1</sup>.
+</p>
+
+<p>
+Csp1 has a signal peptide targeting it to the <a data-toggle="popover1" data-trigger="hover" title="TAT" data-content="An incompletely understood prokaryotic secretion system"> twin arginine translocation pathway</a> (TAT).  This means that it is likely a periplasmic protein. However they also found cytoplasmic homologues in many species challenging their and our assumption that copper storage occurs only in the periplasm due to copper toxicity.
+</p>
+<p>
+We codon optimised Csp1 to <i>E. coli</i> and replaced the original TAT sequence with a TAT sequence from the <i>E. coli</i> protein <a data-toggle="popover1" data-trigger="hover" title="CueO" data-content="An E. coli multicopper oxidase enzyme that protects against copper toxicity by oxidising Cu(I) to the less toxic Cu(II)"> CueO</a>, which is also involved in copper regulation. To get Csp1 from the shipping vector to the pBAD expression system for testing the TAT sequence had to be modified by the addition of a serine residue after the initiator amino acid of methionine. Serine was chosen over other amino acid possibilities because other TAT sequences seemed to have serine in this location. 
+</p>
+<img src="http://2016.igem.org/wiki/images/0/0e/Csp1_single_for_Chelators_page_Sam_Oxford_2016.png" width="50%"/><figcaption>A Csp1 monomer with chelated copper from Vita <i>et al.</i> <sup>(1)</sup></figcaption>
+<p>You can view a animation of the full Csp1 tetramer <a href="http://2016.igem.org/wiki/images/9/91/Csp1_with_copper_gif_Oxford_2016_Sam.gif">here</a>.</p>
+<h3 id="Csp1sfGFP">TAT Csp1 sfGFP</h3>
+<p>
+Csp1 sfGFP is a form of Csp1 with a C-terminal sfGFP tag as well as the modified TAT sequence. The sfGFP has a C-terminal hexahistidine tag for purification using Ni-NTA agarose affinity chromatography. We used this version of Csp1 for purification and microscopy studies. The microscopy images unfortunately showed no evidence of the protein reaching the periplasm. Instead they likely formed inclusion bodies.
+</p>
+<img src="http://2016.igem.org/wiki/images/d/d0/Cg_microscopy_image_v2_sam_oxford_2016.png" width="80%"/><figcaption>Composite, Differential Interference Contrast and fluorescence channel images for Csp1sfGFP expressed form the pBad expression plasmid with 2mM arabinose</figcaption>
+
+<h2 id="MymTH">Mycobacterial Metallothionien (MymT)</h2>
+<p>
+MymT is a small prokaryotic <a data-toggle="popover1" data-trigger="hover" title="Metallothein" data-content="Very small Cysteine-rich proteins involved in transport and storage">metallothein</a> discovered in <i>Mycobacterium tuberculosis</i> by Gold <i>et al.</i><sup>(2)</sup> It is believed that the protein may help the bacterium survive copper toxicity. No crystal structure of MymT was obtained but there is an NMR structure of a eukaryotic homologue<sup>(3)</sup>: 
+</p>
+<img src="http://2016.igem.org/wiki/images/c/ca/MymT_image_for_parts_page_Sam_Oxford_2016.png" width="25%" /><figcaption>NMR average of yeast Cu Metallothein (PDB: 1AQR)</figcaption>
+
+<h3 id="MymT">MymT</h3>
+<p>
+MymT is much smaller than Csp1 and, because we did not add in a secretion tag, is intended to be cytoplasmic. It can bind up to 7 copper ions but has a preference for 4-6.<sup>(2)</sup>
+</p>
+
+<h3 id="MymTsfGFP">MymT sfGFP</h3>
+<p>
+This was a form of MymT with a C-terminal sfGFP. We used this version of MymT for purification and microscopy studies. Unlike Csp1sfGFP it had few problems with expression.
+</p>
+</section>
+
+<section id="Promoters" style="padding-top: 75px; margin-top:-75px;">
+<h1 id="promoters" class="pageTitleNavy">Copper sensitive Promoters</h1>
+
+<p>
+ For our copper chelating bacteria to successfully compete in the gut we investigated copper biosensors so that the chelator was only produced when copper was present, maintaining cell resources. 
+</p>
+<p>
+As copper is a <a data-toggle="popover1" data-trigger="hover" title="Redox metal" data-content="Redox metals are ions with multiple stable oxidation states and can gain or lose electrons from other compounds. Copper has the oxidations states +1 and +2">redox metal</a> it is both very important in cells enzymes but also very toxic because it leads to the formation of reactive oxygen species. Consequently <i>Escherichia coli</i> has two systems of detecting excess copper: the CueR-linked system that detects cytoplasmic copper and the CusS/CusR two component system that detects periplasmic copper. 
+We investigated both systems and by arranging the components to form a <a data-toggle="popover1" data-trigger="hover" title="Positive feedback" data-content="As system whereby a small increase in the concentration of a substance (here activator) leads then to a greater increase in the concentration of the same substance">positive feedback loop</a> hoped to improve their sensitivity over the range of copper concentrations we were interested in.
+</p>
+
+
+<h2 id="CueR">CueR linked systems</h2>
+<img src="http://2016.igem.org/wiki/images/4/47/T--Oxford--cueRtoDNA.png" width="25%" /><figcaption>The <i>E. coli</i> copper regulator CueR: monomer with copper (red) and without copper (cyan) attached to the pCopA promoter showing DNA bending. (cealigned in pymol from PDB 4wls and 4wlw)<sup>(6)</sup></figcaption>
+<p>
+<i>E. coli</i> cells use a protein called CueR to regulate the cytoplasmic copper concentration. CueR is a <a data-toggle="popover1" data-trigger="hover" title="MerR" data-content="An E. coli transcription factor with a helix-turn-helix motif that regulates the bacterial cells’ response to mercury ">MerR</a>-type regulator with an interesting <a href="http://2016.igem.org/Team:Oxford/CueR_MOI">mechanism of action</a> whereby it can behave as a net activator or a net repressor under different copper concentrations through interaction with <a data-toggle="popover1" data-trigger="hover" title="RNA polymerase" data-content="An enzyme that transcribes the DNA sequence of a gene into an mRNA sequence that is then translated into a protein sequence.">RNA polymerase</a>.<sup>(7)</sup> More information and an animated version of the above image can be found <a href="http://2016.igem.org/Team:Oxford/CueR_MOI">here</a>. CueR forms dimers consisting of three functional domains (a DNA-binding, a dimerisation and a metal-binding domain). The DNA binding domains bind to DNA <a data-toggle="popover1" data-trigger="hover" title="Inverted Repeat" data-content="A DNA sequence followed downstream by its reverse complement">inverted repeats</a> called CueR boxes with the sequence: 
+</p>
+<p>
+CCTTCCNNNNNNGGAAGG.
+</p>
+<p>
+This box is present at the promoter regions of the copper exporting ATPase CopA, some molybdenum cofactor synthesis genes and the periplasmic copper oxidase protein CueO.<sup>(4)</sup>
+</p>
+<p>
+We constructed different promoter systems based upon the promoter for <i>copA</i>, pCopA:
+</p>
+
+
+
+
+
+<h3 id="pcg">pCopA sfGFP</h3>
+<img src="http://2016.igem.org/wiki/images/f/fa/Pcg_diagram_v1_Oxford_sam_2016.jpeg" width="50%" /><figcaption>The design of part <a href="http://parts.igem.org/Part:BBa_K1980005">BBa_K1980005</a></figcaption>
+<p>
+The simplest system we tested was simply the pCopA promoter in front of sfGFP. We found that this system was only weakly copper responsive. This may be because there were 500+ copies of the pCopA promoter located on the high copy plasmid compared with only a single copy of CueR expressed from the bacterial genome. If CueR is only weakly expressed then there would be insufficient protein to bind at all of the promoter binding sites and the genes could not be activated.</p>
+<p>A BspH1 site was included at the start codon of the sfGFP so that other proteins with a compatible start (such as the copper chelators we ligated into our pBAD vector) could be ligated into this location.
+</p>
+<img src="http://2016.igem.org/wiki/images/f/fd/Pcg_graph_4h_sam_oxford_2016.jpeg" width="50%" /><figcaption>Plate reader data for BBa_K1980005 after 4 hours </figcaption>
+
+
+
+<h3 id="pg">pCopA sfGFP with divergent CueR</h3>
+<img src="http://2016.igem.org/wiki/images/6/6d/Pg_diagram_v1_Sam_Oxford_2016.jpeg" width="50%" /><figcaption>Our biosensor design. We unfortunately never managed to submit this part</a></figcaption>
+<p>
+This promoter system was based upon <a href="http://parts.igem.org/Part:BBa_K1758324">this part</a> in the registry from Team Bielefeld-CeBiTec in 2015. 
+</p>
+<p>
+The team assembled a copper biosensor from two subparts which they then joined together: 
+</p>
+<p> 
+The first part is a pCopA-RBS-sfGFP and the second part is the regulator CueR expressed from a constitutive promoter. The part is deposited in the registry and labelled to suggest the CueR is expressed divergent from the sfGFP (on the opposite strand and transcribed in the opposite direction): 
+</p>
+<img src="http://2016.igem.org/wiki/images/2/20/PG_incorrect_Oxford_Sam_2016.png" width="75%" /><figcaption>How BBa_K1758324 is labelled in the registry</figcaption>
+<p>
+However if you look at the sequence level this is clearly not the case. The constitutive promoter and the CueR start codon are at the 5’ end of the sfGFP coding strand and the CueR stop codon just upstream of pCopA. The part in fact has the constitutive promoter on the same strand as pCopA and sfGFP facing in the same direction and would be better represented like this: 
+</p>
+<img src="http://2016.igem.org/wiki/images/0/09/PCopA_CueR_incorrect_LOL_sam_oxford_2016.png" width="70%" /><figcaption>How BBa_K1758324 should be labelled in the registry based on its underlying sequence</figcaption>
+<p>
+As the two coding regions are not separated by a transcription terminator, there would be read through from the constitutive promoter to the sfGFP and sfGFP would be expressed even in the absence of copper. As no negative control is included in the plate reader graph they provide and no settings provided for their BioLector experiments in their <a href="http://2015.igem.org/Team:Bielefeld-CeBiTec/Protocols">protocols</a>  it is unclear just how high the expression level at 0mM copper was for this part compared to a negative control strain.
+</p>
+<p>The CueR subpart (<a href="http://parts.igem.org/Part:BBa_K17583204">BBa_K1758320</a>) making up BBa_K1758324 is also incorrectly labelled.</p>
+<p>
+When we designed this part we flipped the CueR and the constitutive promoter to face the opposite direction on the opposite strand i.e. so they were divergent. We also had to remove the 5'UTR, which Bielefeld found to increase expression, because it was too AT rich to be synthesised.</p>
+<p> Unfortunately, every attempt to amplify this part from the synthesised sequence we received from IDT resulted in the same two point mutations in the sfGFP region of this part making it non-functional. To compare this promoter system to the others we designed, we used our parts with chelator-sfGFP fusions instead of the sfGFP which we expected to have similar behaviour.
+</p>
+
+<h3 id="p">pCopA with divergent expressed CueR</h3>
+<p>
+To facilitate making any protein under control of a copper-responsive promoter we designed a part (<a href="http://parts.igem.org/Part:BBa_K1980006">BBa_K1980006</a>) similar to the above pCopA sfGFP with divergent expressed CueR but without the sfGFP. The RBS however is still present meaning that any protein with the ATG biobrick prefix and universal suffix can be inserted with biobrick standard assembly with the correct RBS-ATG distance.
+</p>
+
+<h3 id="fcg">pCopA CueR sfGFP/ Feedback pCopA sfGFP</h3>
+<img src="http://2016.igem.org/wiki/images/0/09/Fcg_diagram_v1_sam_oxford_2016.jpeg" width="50%" /><figcaption>The design of part <a href="http://parts.igem.org/Part:BBa_K1980008">BBa_K1980008</a></figcaption>
+<p>
+We designed a part similar to the above but with CueR expressed from the same pCopA promoter that it controls in order to study CueR operating under a feedback loop. If CueR is acting as a net activator, this should in theory act as a positive feedback system whereby a small amount of copper stimulation produces more CueR causing greater activation. Should CueR be acting as a net repressor this system would be less sensitive than our previous system and this appears to be what we discovered. </p>
+<p>
+A BspH1 site was included at the start codon of the sfGFP so that other proteins with a compatible start (such as the copper chelators we ligated into our pBAD vector) could be ligated into this location.
+</p>
+<img src="http://2016.igem.org/wiki/images/9/99/Fcg_4h_graph_sam_oxford_2016.jpeg" width="50%" /><figcaption>Plate reader data for BBa_K1980008 after 4 hours </figcaption>
+<h2 id="CusS-CusR">CusS/CusR linked systems</h2>
+<p>
+The second system <i>E. coli</i> uses to respond to copper is the CusS/CusR two-component system. This consists of the transmembrane histidine kinase enzyme: CusS in the bacterial cytoplasmic membrane and a cytoplasmic response regulator: CusR. 
+</p>
+<p>
+When CusS binds periplasmic copper it transfers a phosphate group from ATP to CusR aspartate residue 51 via CusS histidine residue 271. Phosphorylated CusR can bind to DNA <a data-toggle="popover1" data-trigger="hover" title="Inverted Repeat" data-content="A DNA sequence followed downstream by its reverse complement">inverted repeat</a> CusR boxes (AAAATGACAANNTTGTCATTTT) and activate gene expression. 
+</p>
+<p>
+In <i>E. coli</i> this box is present between the promoters for CusCFBA operon which encodes a multi-protein pump that exports cytoplasmic and periplasmic copper from the cell and the CusRS operon which encodes the two component system (therefore acting as a positive feedback loop in vivo). <sup>(4)</sup>
+</p>
+
+<h3 id="pCusC">pCusC RFP</h3>
+<img src="http://2016.igem.org/wiki/images/1/1a/PCusC_mKate_diagram_v1_Sam_Oxford_2016.jpeg" width="50%" /><figcaption>The design of part <a href="http://parts.igem.org/Part:BBa_K1980007">BBa_K1980007</a></figcaption>
+<p>
+We received a copy of pCusC <a data-toggle="popover1" data-trigger="hover" title="monomeric Kate2" data-content="A very bright far-red fluorescent protein with excitation/emission maxima at 588 and 633 nm">mKate</a> (a form of RFP) from Tom Folliard, one of the PhD students in our lab. This sequence had a biobrick-illegal Spe1 site in the RBS region meaning we could not deposit in the registry. We performed site directed mutagenesis to swap a C in the Spe1 site for G, and moved it into the shipping vector. This part was then deposited. We also amplified the promoter region only and deposited this separately.(<a href="http://parts.igem.org/Part:BBa_K1980004">BBa_K1980004</a>) 
+</p>
+<img src="http://2016.igem.org/wiki/images/9/92/PCusC_RFP_4h_graph_Oxford_Sam_2016.jpeg" width="50%" /><figcaption>Plate reader data for BBa_K1980007 after 4 hours </figcaption>
+
+<h3 id="fck">pCusC CusR RFP</h3>
+<img src="http://2016.igem.org/wiki/images/b/b6/Fck_diagram_v2_sam_oxford_2016.jpeg" width="50%" /><figcaption>The design of part <a href="http://parts.igem.org/Part:BBa_K1980009">BBa_K1980009</a></figcaption>
+<p>
+We also designed a version of the part with CusR expressed before mKate forming a positive feedback loop. This sort of system was shown to be more responsive in a paper by Ravikumar S <i>et al.</i><sup>(5)</sup>. However after many attempts at cloning our only full length construct had a point mutation (Val to Ala) in the <i>CusR</i> gene. We tested this part to see if this mutation was tolerable, but found no evidence for a more sensitive system:
+</p>
+<img src="http://2016.igem.org/wiki/images/b/b7/Fck_4h_graph_sam_oxford_2016.jpeg" width="50%" /><figcaption>Plate reader data for BBa_K1980009 after 4 hours </figcaption>
+<p>A BspH1 site was included at the start codon of the sfGFP so that other proteins with a compatible start (such as the copper chelators we ligated into our pBAD vector) could be ligated into this location.
+</p>
+</section>
+
+<section id="Comps" style="padding-top: 75px; margin-top:-75px;">
+<h1 class="pageTitleNavy">Composite Parts</h1>
+<p>
+These are parts we produced with a copper chelator under control of a copper-sensitive promoter. If these behave as expected then, if a small concentration of copper is added to cells containing this part, copper will induce expression of the chelator, which would then chelate free copper. If free copper is reduced then chelator expression should be reduced until a stable equilibrium is reached. This copper buffering is dependent upon both the copper promoters behaviour and the copper chelator expression and affinity (see our <a href="http://2016.igem.org/Team:Oxford/Model">modelling page</a>). In practice the level of copper concentrations upon which these systems would operate was below our copper absorbance assay detection limits.</p> 
+
+<h3 id="pm">pCopA MymT with divergent expressed CueR</h3>
+<img src="
+http://2016.igem.org/wiki/images/0/0f/Pm_diagram_v1_Oxford_sam_2016.jpeg" width="50%" /><figcaption>The design of part <a href="http://parts.igem.org/Part:BBa_K1980011">BBa_K1980011</a></figcaption>
+<p>
+This part contains the chelator MymT behind a copper sensitive promoter with divergent expressed CueR in the biobrick. 
+</p>
+
+<h3 id="pmg">pCopA MymT sfGFP divergent expressed CueR</h3>
+<img src="http://2016.igem.org/wiki/images/9/90/Pmg_diagram_v1_Oxford_sam_2016.jpeg" width="50%" /><figcaption>The design of part <a href="http://parts.igem.org/Part:BBa_K1980012">BBa_K1980012</a></figcaption>
+<p>
+This part contains our chelator MymT with a C-terminal sfGFP tag behind the pCopA promoter with divergent expressed CueR in the biobrick. 
+</p>
+<img src="http://2016.igem.org/wiki/images/4/42/Pmg_4h_graph_sam_oxofrd_2016.jpeg" width="50%" /><figcaption>Plate reader data for BBa_K1980012 after 4 hours </figcaption>
+
+<h3 id="ptcg">pCopA TAT Csp1 sfGFP constitutively expressed CueR</h3>
+<img src="http://2016.igem.org/wiki/images/5/5d/Ptcg_diagram_v1_Oxford_sam_2016.jpeg" width="50%" /><figcaption>The design of part <a href="http://parts.igem.org/Part:BBa_K1980010">BBa_K1980010</a></figcaption>
+<p>
+This part contains our chelator Csp1 with a C-terminal sfGFP tag behind the pCopA promoter with constitutively expressed CueR in the biobrick. Likely due to the expression problems of Csp1 it responded worse than the similar part above with our MymTsfGFP fusion protein.
+</p>
+<img src="http://2016.igem.org/wiki/images/9/97/Ptcg_graph_4h_sam_oxford_2016.jpeg" width="50%" /><figcaption>Plate reader data for BBa_K1980010 after 4 hours </figcaption>
+</section>
+
+<h1 id="references" class="pageTitleNavy">References:</h1>
+<div class="references">
+<ul>
+<li>
+(1)	Nicolas Vita, Semeli Platsaki, Arnaud Basle, Stephen J. Allen, Neil G. Paterson, Andrew T. Crombie, J. Colin Murrell, Kevin J.Waldron & Christopher Dennison (2015)
+“A four-helix bundle stores copper for methane
+oxidation”, Nature 525 issue 7567 pg. 140-143 doi:10.1038/nature14854
+</li>
+<li>
+(2) Ben Gold, Haiteng Deng, Ruslana Bryk, Diana Vargas, David Eliezer, Julia Roberts,
+Xiuju Jiang, & Carl Nathan (2009) “Identification of a Copper-Binding Metallothionein in Pathogenic Mycobacteria” Nat Chem Biol. 
+2008 October ; 4(10): 609–616. doi:10.1038/nchembio.109.
+</li>
+<li>
+(3)
+1AQS from Peterson, C.W., Narula, S.S., Armitage, I.M. “3D solution  structure of copper and silver-substituted yeast metallothioneins” (1996) FEBS Lett. 379: 85-93
+</li>
+<li>
+(4) Yamamoto K, Ishihama A. (2005) “Transcriptional response of Escherichia coli to external copper.” Mol Microbiol. 2005 Apr;56(1):215-27.
+</li>
+<li>
+(5) Sambandam Ravikumar, Van Dung Pham, Seung Hwan Lee, Ik-keun Yoo, Soon Ho Hong (2012) “Modification of CusSR bacterial two-component systems by the introduction of an inducible positive feedback loop” Journal of Industrial Microbiology & Biotechnology June 2012, Volume 39, Issue 6, pp 861–868
+</li>
+<li>
+(6) Philips, S.J., Canalizo-Hernandez M., Yildirim I., Schatz G., Mondragón A., O’Halloran T., (2015) "Allosteric transcriptional regulation via changes in the overall topology of the core promoter." Science 349: 877-881
+</li>
+<li>
+(7) Danya J. Martell, Chandra P. Joshi, Ahmed Gaballa, Ace George Santiago, Tai-Yen Chen, Won Jung, John D. Helmann, and Peng Chen (2015) “Metalloregulator CueR biases RNA polymerase’s kinetic sampling of dead-end or open complex to repress or activate transcription” Proc Natl Acad Sci U S A. 2015 Nov 3; 112(44): 13467–13472.
+</li>
+</ul>
+</div>
+
+
+</div>
+
+
+</div>
+</div>
+</body> </html>
