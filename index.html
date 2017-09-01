@@ -126,7 +126,7 @@ var x = setInterval(function() {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
     // Output the result in an element with id="demo"
-    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    document.getElementById("Timer").innerHTML = days + "d " + hours + "h "
     + minutes + "m " + seconds + "s ";
     
     // If the count down is over, write some text 
@@ -136,6 +136,7 @@ var x = setInterval(function() {
     }
 }, 1000);
 </script>
+<p id="Timer"></p>
 <h1 id="Background"> Background (relevance) </h1>
 <h3 id="Gene"> Regulated gene expression</h3>
 <p>Bioscience industry such as genetic modified organisms and gene therapy are enhanced by the control of gene expression. Control over the expression of the protein-hormone insulin in response to glucose-concentration could, for instance, allow a cell-based treatment for diabetes and selective expression of a toxin only in tumour cells could act as a gene therapy treatment for cancer.</p> 
